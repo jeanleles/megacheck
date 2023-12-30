@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Check</title>
+    <link rel="shortcut icon" href="images/password-fav.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Rubik+Mono+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+      <div class="container">
+        <a href="#">
+          <h1>Mega Check</h1>
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="box">
+            <h2>Jogos</h2>
+            <hr>
+            <div class="add-game">  
+              <label for="game">Adicione aqui os seus jogos:</label>
+              <div class="field-button">
+                <input type="text" class="field" id="newgame" onfocus="true" placeholder="12, 23, 25, 30, 43, 48">
+                <button class="btn" id="addGame">Cadastrar Jogo</button>
+              </div>                
+            </div>
+            <h3>Seus Jogos:</h3>
+            <div class="games">
+            </div>
+            <button class="btn-remove" id="removeGames">Remover todos os jogos</button>
+        </div>
+
+        <div class="box">
+          <h2>Resultado</h2>
+          <hr>
+          <div class="add-game">
+            <label for="game">Digite aqui o resultado final do concurso:</label>
+            <div class="field-button">
+              <input type="text" class="field" id="resultado" placeholder="12, 23, 25, 30, 43, 48">
+              <button class="btn" id="checkResult">Validar Resultado</button>
+            </div>
+          </div>
+          <div>
+            <h3 class="result">Boa sorte!!!</h3>
+          </div>
+      </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
