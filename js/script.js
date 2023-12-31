@@ -10,6 +10,11 @@ window.onload = function() {
     jogosArmazenados.forEach(item => {
       listGames.appendChild(criarElemento(item))
     })
+
+    if (listGames.children.length > 0) {
+        const wrappRemove = document.querySelector('.wrapp-remove')
+        wrappRemove.classList.add('ativo')
+    }
 }
 
 function criarElemento(jogo) {
@@ -41,6 +46,8 @@ addGame.addEventListener('click', () => {
         const lastGame = document.querySelector('.game')
         listGames.insertBefore(criarElemento(jogo), lastGame)
         console.log(criarElemento(jogo))
+        const wrappRemove = document.querySelector('.wrapp-remove')
+        wrappRemove.classList.add('ativo')
     } else {
         alert("Digite os numeros do seu jogo.")
     }
@@ -55,6 +62,8 @@ removeGames.addEventListener('click', () => {
     while (listGames.firstChild) {
         listGames.removeChild(listGames.firstChild)
     }
+    const wrappRemove = document.querySelector('.wrapp-remove')
+    wrappRemove.classList.remove('ativo')
 })
 
 function removerJogo(element) {
@@ -68,8 +77,13 @@ function removerJogo(element) {
     if (indexToRemove !== -1) {
         jogosSalvos.splice(indexToRemove, 1)
         localStorage.setItem('jogos', JSON.stringify(jogosSalvos))
-    }
+    } 
+    
     divPai.remove()
+    if (listGames.children.length < 1) {
+        const wrappRemove = document.querySelector('.wrapp-remove')
+        wrappRemove.classList.remove('ativo')
+    }
 }
   
 listGames.addEventListener('click', event => {
@@ -96,6 +110,6 @@ checkResult.addEventListener('click', () => {
         document.querySelector('.result').innerText = "Uaaaau! Você GANHOU!!! 🤑🤑🤑"
     }
     else {
-        document.querySelector('.result').innerText = "Não foi dessa vez 😔"
+        document.querySelector('.result').innerText = "Que pena! Não foi dessa vez 😔"
     }
 })

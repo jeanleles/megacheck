@@ -84,7 +84,7 @@ main {
     display: flex;
 	gap: 30px;
     justify-content: center;
-    margin-top: 42px;
+    margin: 42px 0;
 }
 
 .box {
@@ -96,6 +96,12 @@ main {
 	flex-direction: column;
 	padding: 24px;
 } 
+
+.box-result {
+	position: -webkit-sticky;
+ 	position: sticky;
+  	top: 42px;
+}
 
 hr {
     width: 100%;
@@ -171,11 +177,18 @@ input {
     cursor: pointer;
 }
 
+.wrapp-remove {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	display: none;
+}
+
 .btn-remove {
 	border: none;
-	background: var(--blue1);
+	background: var(--red1);
 	font-size: 1.4rem;
-	color: #161B22;
+	color: #FBFBFB;
 	font-weight: 500;
 	border-radius: 8px;
 	transition: all ease .2s;
@@ -188,6 +201,10 @@ input {
 .btn:hover, .btn-remove:hover {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	opacity: .8;
+}
+
+.ativo {
+	display: flex;
 }
 
 .games {
@@ -203,7 +220,7 @@ input {
     margin: 4px 0;
     padding: 10px;
     background-color: var(--bg-dark2);
-
+	border-radius: 6px;
 }
 
 .game span {
